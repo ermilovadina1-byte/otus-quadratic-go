@@ -12,7 +12,6 @@ var ErrNonFiniteCoefficient = errors.New("coefficient is not finite")
 var ErrUnrepresentableResult = errors.New("calculation is outside float64 range")
 
 // Solve returns the real roots of a*x*x+b*x+c=0, including multiplicity.
-// TODO: implement the cases described by the tests.
 func Solve(a, b, c float64) ([]float64, error) {
 	for _, coefficient := range []float64{a, b, c} {
 		if math.IsNaN(coefficient) || math.IsInf(coefficient, 0) {
